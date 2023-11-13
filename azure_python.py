@@ -1,5 +1,9 @@
+from sys import stdin
+
 def main():
     print("Azure Python")
+    line = stdin.readline(256) # TODO hardcoded
+    print(line)
     print(USAGE)
 
 USAGE = """Usage: python azure_python.py
