@@ -1,12 +1,13 @@
+from yaml import safe_load
 from sys import stdin
 
 def main():
     print("Azure Python")
-    line = stdin.readline(256) # TODO hardcoded
-    print(line)
+    conf = safe_load(stdin)
+    print(conf["uri"])
     print(USAGE)
 
-USAGE = """Usage: python azure_python.py
+USAGE = """usage: python azure_python.py
 where
   - "python" is the Python runtime
 """
