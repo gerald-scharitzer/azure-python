@@ -8,6 +8,7 @@ Minimize cost by using [always free services](https://azure.microsoft.com/en-us/
 
 # Develop
 
-1) Ensure that `pip` is available with `python -m ensurepip --upgrade`
-2) Get required packages with `python -m pip install -r requirements.txt`
-3) Run with `python azure_python.py <stdin.yaml`
+1) Clone with `git clone https://github.com/gerald-scharitzer/azure-python.git`
+2) Install `pip` with `python -m ensurepip --upgrade`
+3) Install packages with `python -m pip install -r requirements.txt`
+4) Run with `python azure_python.py <stdin.yaml`
