@@ -1,6 +1,6 @@
 from sys import stdin
 
-from requests import get
+from requests import codes, get
 from yaml import safe_load
 
 def main():
@@ -12,7 +12,12 @@ def main():
     token = conf["token"]
     headers = { "Authorization": "Bearer " + token}
     response = get(uri, headers=headers)
-    print(response)
+    if response.status_code == codes.OK:
+        print(response)
+    else:
+        request = response.request
+        print(request.method + " " + request.url)
+        print(str(response.status_code) + " " + response.reason)
     print(USAGE)
 
 USAGE = """\
