@@ -31,6 +31,7 @@ def main():
         response = post(uri, data, headers=headers)
         if response.status_code == codes.OK:
             # TODO check token_type Bearer
+            # TODO parse json response and get access_token
             print(response.text)
         else:
             request = response.request
@@ -44,7 +45,10 @@ def main():
     headers = {"Authorization": "Bearer " + access_token}
     response = get(uri, headers=headers)
     if response.status_code == codes.OK:
-        print(response.text)
+        locations_dict = response.json()
+        locations_list = locations_dict["value"]
+        for location in locations_list:
+            print(location["name"])
     else:
         request = response.request
         print(request.method + " " + request.url)
