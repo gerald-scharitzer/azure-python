@@ -1,1 +1,6 @@
-uri: "https://github.com"
+client_id: "" # Azure app registration (client) ID
+tenant_id: "" # Azure directory (tenant) ID
+subscription_id: "" # Azure subscription ID
+secret: "" # Azure app registration secret
+access_token: "" # Azure web API access token
+data_dir: "" # data directory path

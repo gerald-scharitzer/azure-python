@@ -1,5 +1,6 @@
 from sys import stdin
 
+from pandas import DataFrame
 from requests import codes, get, post
 from yaml import safe_load
 
@@ -47,8 +48,8 @@ def main():
     if response.status_code == codes.OK:
         locations_dict = response.json()
         locations_list = locations_dict["value"]
-        for location in locations_list:
-            print(location["name"])
+        locations = DataFrame(locations_list)
+        print(locations)
     else:
         request = response.request
         print(request.method + " " + request.url)
